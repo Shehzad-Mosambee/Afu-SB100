@@ -1,0 +1,174 @@
+Compiling C Source/MainApp/test_main.c...
+Compiling C Source/MainApp/src/keypad.c...
+Compiling C Source/MainApp/src/transactions.c...
+Compiling C Source/MainApp/src/vendor_main.c...
+Source/MainApp/src/vendor_main.c: In function 'vendor_speaker_test':
+Source/MainApp/src/vendor_main.c:113:9: warning: implicit declaration of function 'AudioSetVolume' [-Wimplicit-function-declaration]
+         AudioSetVolume(volume);
+         ^~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_gprs_test':
+Source/MainApp/src/vendor_main.c:236:1: warning: label 'network_reinit' defined but not used [-Wunused-label]
+ network_reinit:
+ ^~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_wifi_connect':
+Source/MainApp/src/vendor_main.c:301:37: warning: pointer targets in passing argument 1 of 'sdk_start_connect' differ in signedness [-Wpointer-sign]
+             ret = sdk_start_connect(ssid, pwd, NULL, 30);
+                                     ^~~~
+In file included from Source/MainApp/src/vendor_main.c:10:0:
+./Source/MainApp/include/SDK_API_WIFI.h:28:5: note: expected 'unsigned char *' but argument is of type 'char *'
+ int sdk_start_connect( unsigned char *ssid, unsigned char *pwd, GET_WIFI_CONNECT connectCallback, int timeout );
+     ^~~~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c:301:43: warning: pointer targets in passing argument 2 of 'sdk_start_connect' differ in signedness [-Wpointer-sign]
+             ret = sdk_start_connect(ssid, pwd, NULL, 30);
+                                           ^~~
+In file included from Source/MainApp/src/vendor_main.c:10:0:
+./Source/MainApp/include/SDK_API_WIFI.h:28:5: note: expected 'unsigned char *' but argument is of type 'char *'
+ int sdk_start_connect( unsigned char *ssid, unsigned char *pwd, GET_WIFI_CONNECT connectCallback, int timeout );
+     ^~~~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_wifi_test':
+Source/MainApp/src/vendor_main.c:330:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+     if(0 != sdk_network_wifi_init())
+     ^~
+Source/MainApp/src/vendor_main.c:333:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  ret = vendor_wifi_connect("JBX", "ld123456@");
+  ^~~
+Source/MainApp/src/vendor_main.c:320:7: warning: unused variable 'wifi_init_OK' [-Wunused-variable]
+  BOOL wifi_init_OK;
+       ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c:319:9: warning: unused variable 'count' [-Wunused-variable]
+     int count = 0;
+         ^~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_let_test_thread':
+Source/MainApp/src/vendor_main.c:367:9: warning: implicit declaration of function 'anfu_led_on' [-Wimplicit-function-declaration]
+         anfu_led_on();
+         ^~~~~~~~~~~
+Source/MainApp/src/vendor_main.c:370:9: warning: implicit declaration of function 'anfu_led_off' [-Wimplicit-function-declaration]
+         anfu_led_off();
+         ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_led_test':
+Source/MainApp/src/vendor_main.c:392:30: warning: passing argument 3 of 'CreateThread' from incompatible pointer type [-Wincompatible-pointer-types]
+     CreateThread(NULL,4*1024,vendor_let_test_thread,0,NULL,STACK_SIZE_RESERVATION,NULL);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Source/MainApp/src/vendor_main.c:5:0:
+./inc/MercuryThread.h:113:15: note: expected 'LPTHREAD_START_ROUTINE {aka void (*)(long unsigned int,  void *)}' but argument is of type 'void (*)(void)'
+ extern HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpsa,DWORD cbStack,
+               ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_bcs_test_thread':
+Source/MainApp/src/vendor_main.c:474:9: warning: implicit declaration of function 'qyy_bcs_set_icon'; did you mean 'sdk_bcs_set_rssi'? [-Wimplicit-function-declaration]
+         qyy_bcs_set_icon(VENDOR_BCS_GPRS_RSSI_ICON | VENDOR_BCS_GPRS_RSSI_INVALID_ICON | VENDOR_BCS_WIFI_RSSI_ICON | VENDOR_BCS_WIFI_RSSI_INVALID_ICON |
+         ^~~~~~~~~~~~~~~~
+         sdk_bcs_set_rssi
+Source/MainApp/src/vendor_main.c: In function 'vendor_bcs_test':
+Source/MainApp/src/vendor_main.c:503:30: warning: passing argument 3 of 'CreateThread' from incompatible pointer type [-Wincompatible-pointer-types]
+     CreateThread(NULL,4*1024,vendor_bcs_test_thread,0,NULL,STACK_SIZE_RESERVATION,NULL);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Source/MainApp/src/vendor_main.c:5:0:
+./inc/MercuryThread.h:113:15: note: expected 'LPTHREAD_START_ROUTINE {aka void (*)(long unsigned int,  void *)}' but argument is of type 'void (*)(void)'
+ extern HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpsa,DWORD cbStack,
+               ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_powerkey_short_callback':
+Source/MainApp/src/vendor_main.c:555:34: warning: passing argument 3 of 'CreateThread' from incompatible pointer type [-Wincompatible-pointer-types]
+         CreateThread(NULL,4*1024,powerkey_amr_thread,0,NULL,STACK_SIZE_RESERVATION,NULL);
+                                  ^~~~~~~~~~~~~~~~~~~
+In file included from Source/MainApp/src/vendor_main.c:5:0:
+./inc/MercuryThread.h:113:15: note: expected 'LPTHREAD_START_ROUTINE {aka void (*)(long unsigned int,  void *)}' but argument is of type 'void (*)(void)'
+ extern HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpsa,DWORD cbStack,
+               ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_volume_down_long_press':
+Source/MainApp/src/vendor_main.c:648:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+Source/MainApp/src/vendor_main.c:646:7: note: declared here
+ void *vendor_volume_down_long_press(void *key)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_volume_up_long_press':
+Source/MainApp/src/vendor_main.c:651:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+Source/MainApp/src/vendor_main.c:650:7: note: declared here
+ void *vendor_volume_up_long_press(void *key){
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_replay_long_press':
+Source/MainApp/src/vendor_main.c:654:5: warning: 'return' with no value, in function returning non-void
+     return;
+     ^~~~~~
+Source/MainApp/src/vendor_main.c:653:7: note: declared here
+ void *vendor_replay_long_press(void *key){
+       ^~~~~~~~~~~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_keypad_scan_thread':
+Source/MainApp/src/vendor_main.c:661:9: warning: implicit declaration of function 'sdk_keypad_scan_handle'; did you mean 'vendor_keypad_scan_thread'? [-Wimplicit-function-declaration]
+         sdk_keypad_scan_handle();
+         ^~~~~~~~~~~~~~~~~~~~~~
+         vendor_keypad_scan_thread
+Source/MainApp/src/vendor_main.c: In function 'vendor_keypad_init_io':
+Source/MainApp/src/vendor_main.c:669:5: warning: implicit declaration of function 'sdk_reg_powerkey_shortpress_callback'; did you mean 'vendor_powerkey_short_callback'? [-Wimplicit-function-declaration]
+     sdk_reg_powerkey_shortpress_callback(vendor_powerkey_short_callback);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     vendor_powerkey_short_callback
+Source/MainApp/src/vendor_main.c:670:2: warning: implicit declaration of function 'sdk_reg_poweroff_callback'; did you mean 'sdk_reg_mp3_complete_callback'? [-Wimplicit-function-declaration]
+  sdk_reg_poweroff_callback(vendor_powerkey_long_callback);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+  sdk_reg_mp3_complete_callback
+Source/MainApp/src/vendor_main.c:672:2: warning: implicit declaration of function 'qyy_reg_tts_complete_callback_event'; did you mean 'sdk_reg_tts_complete_callback'? [-Wimplicit-function-declaration]
+  qyy_reg_tts_complete_callback_event(vendor_tts_complete_callback);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  sdk_reg_tts_complete_callback
+Source/MainApp/src/vendor_main.c:674:5: warning: implicit declaration of function 'sdk_reg_key_short_cb'; did you mean 'sdk_gpio_key_reg_cb'? [-Wimplicit-function-declaration]
+     sdk_reg_key_short_cb(vendor_volume_down_short_press
+     ^~~~~~~~~~~~~~~~~~~~
+     sdk_gpio_key_reg_cb
+Source/MainApp/src/vendor_main.c:678:5: warning: implicit declaration of function 'sdk_reg_key_long_cb'; did you mean 'sdk_gpio_key_reg_cb'? [-Wimplicit-function-declaration]
+     sdk_reg_key_long_cb(vendor_volume_down_long_press,
+     ^~~~~~~~~~~~~~~~~~~
+     sdk_gpio_key_reg_cb
+Source/MainApp/src/vendor_main.c: In function 'set_vendor_test_results':
+Source/MainApp/src/vendor_main.c:692:70: warning: passing argument 3 of 'NV_Write' from incompatible pointer type [-Wincompatible-pointer-types]
+     return NV_Write(NV_VENDOR_TEST_RESULTS,sizeof(VENDORTESTRESULTS),&l_testResults);
+                                                                      ^
+In file included from Source/MainApp/src/vendor_main.c:3:0:
+./inc/MercuryNv.h:24:12: note: expected 'BYTE * {aka unsigned char *}' but argument is of type 'VENDORTESTRESULTS * {aka struct <anonymous> *}'
+ extern int NV_Write(WORD ItemID, WORD cchSize, BYTE *pBuf);
+            ^~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'read_vendor_test_results':
+Source/MainApp/src/vendor_main.c:697:69: warning: passing argument 3 of 'NV_Read' from incompatible pointer type [-Wincompatible-pointer-types]
+     return NV_Read(NV_VENDOR_TEST_RESULTS,sizeof(VENDORTESTRESULTS),&l_testResults);
+                                                                     ^
+In file included from Source/MainApp/src/vendor_main.c:3:0:
+./inc/MercuryNv.h:23:12: note: expected 'BYTE * {aka unsigned char *}' but argument is of type 'VENDORTESTRESULTS * {aka struct <anonymous> *}'
+ extern int NV_Read(WORD ItemID,WORD cchSize, BYTE *pBuf);
+            ^~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_usb_check':
+Source/MainApp/src/vendor_main.c:745:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_main':
+Source/MainApp/src/vendor_main.c:771:36: warning: passing argument 3 of 'CreateThread' from incompatible pointer type [-Wincompatible-pointer-types]
+         CreateThread(NULL,4 * 1024,vendor_mobile_network_thread,0,NULL,STACK_SIZE_RESERVATION,NULL);
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Source/MainApp/src/vendor_main.c:5:0:
+./inc/MercuryThread.h:113:15: note: expected 'LPTHREAD_START_ROUTINE {aka void (*)(long unsigned int,  void *)}' but argument is of type 'void (*)(void)'
+ extern HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpsa,DWORD cbStack,
+               ^~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c:846:9: warning: implicit declaration of function 'app_vendor_proc' [-Wimplicit-function-declaration]
+         app_vendor_proc();
+         ^~~~~~~~~~~~~~~
+Source/MainApp/src/vendor_main.c: In function 'vendor_amr_complete_callback':
+Source/MainApp/src/vendor_main.c:85:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Source/MainApp/src/vendor_main.c: In function 'vendor_tts_complete_callback':
+Source/MainApp/src/vendor_main.c:92:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Source/MainApp/src/vendor_main.c: In function 'vendor_volume_up_short_press':
+Source/MainApp/src/vendor_main.c:598:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Source/MainApp/src/vendor_main.c: In function 'vendor_volume_down_short_press':
+Source/MainApp/src/vendor_main.c:628:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Source/MainApp/src/vendor_main.c: In function 'vendor_replay_short_press':
+Source/MainApp/src/vendor_main.c:643:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^

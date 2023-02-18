@@ -1,0 +1,25 @@
+Version V1.0.0 - Build Number: 1 (27-12-2022)
+---------------------------------------------
+(1) Version Number reset
+(2) Released to HDFC
+
+Version V1.1.7 - Build Number: 9 (19-12-2022)
+---------------------------------------------
+(1) TMS Issue Resolved ( checked with (a) Only Application (b) Only Audio (c) Both )
+(2) 9999 < Amount < 99999 display correction
+(3) PowerOff/Restart code added (key="powerOff" && key="restart")
+(4) free(payload) added before powering off at key="powerOff" && key="restart"
+(5) network select mode & last 10 txn mode switched off at new message arrival
+(6) Delete BCS Clear Timer when it exhausts
+
+
+
+Version V1.1.7 - Build Number: 8 (13-12-2022)
+---------------------------------------------
+(1) Version Display On Screen (double click of Volume-Up (+) button)
+(2) Increased Per Transaction Buffer To 225 Bytes (from 165 bytes)
+(3) key="keepAlive" added to registration response
+
+
+Version V1.1.7 - Build Number: 7
+---------------------------------------------

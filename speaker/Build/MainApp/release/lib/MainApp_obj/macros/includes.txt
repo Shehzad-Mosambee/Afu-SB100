@@ -1,0 +1,1 @@
+-I inc -I Source/MainApp -I Source/MainApp/inc -I Source/MainApp/src -I Source/MainApp/include -I Source/MainApp/include/MQTT -I Source/MainApp/include/mbedtls 
