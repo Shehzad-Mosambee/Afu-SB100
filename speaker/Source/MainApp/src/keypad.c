@@ -595,7 +595,7 @@ void wifi_power_on_af(void)
 	// Set_GPIO_Input(GPIO_WIFI_RESET);
     // Set_GPIO_Output(17, 1);
     appSetGpioOutput(13, 1);//ʹ��
-    // appSetGpioOutput(17, 1);//��λ
+    appSetGpioOutput(17, 1);//��λ
     Sleep(2000);
 
     // wifi_power_on();

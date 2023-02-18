@@ -676,7 +676,7 @@ void mqtt_soundbox_thread(ULONG argc, LPVOID lpThreadParameter)
 		else if (network_mode == NETWORK_MODE_WIFI)
 		{
 			// network online
-			// sdk_wifi_set_dns_server(TRUE, 1, "8.8.8.8");
+			sdk_wifi_set_dns_server(TRUE, 1, "8.8.8.8");
 			qyy_bcs_set_rssi(WIFI_ICON, FALSE);
 		}
 
